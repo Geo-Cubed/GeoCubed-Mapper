@@ -18,10 +18,11 @@ public static class MapperServiceRegistration
     /// <param name="services">The service collection.</param>
     /// <param name="mappingAssembly">The assembly where the mappers are held.</param>
     /// <returns>The service collection.</returns>
-    public static IServiceCollection AddMapper(this IServiceCollection services, Assembly mappingAssembly)
+    public static IServiceCollection AddMapper(this IServiceCollection services, Assembly? mappingAssembly = null)
     {
         services.TryAddSingleton<GlobalMapper>();
 
+        mappingAssembly ??= Assembly.GetCallingAssembly();
         if (!_assemblies.Contains(mappingAssembly))
         {
             // Stop the assembly from being used again.
@@ -33,7 +34,7 @@ public static class MapperServiceRegistration
             {
                 var mapper = assemblyTypes[i];
 
-                var genericType = mapper.GetInterface(MappingHelper.GetMappingType().Name);
+                var genericType = mapper.GetInterface(MappingHelper.CreateMappingType().Name);
                 if (genericType != null)
                 {
                     services.AddScoped(genericType, mapper);

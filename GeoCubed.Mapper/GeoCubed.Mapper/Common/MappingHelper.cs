@@ -2,18 +2,18 @@
 
 internal static class MappingHelper
 {
-    internal static Type GetMappingType() => typeof(IMapping<,>);
+    internal static Type CreateMappingType() => typeof(IMapping<,>);
 
-    internal static Type GetMappingType<Tin, Tout>()
+    internal static Type CreateMappingType<Tin, Tout>()
     {
         var inputType = typeof(Tin);
         var outputType = typeof(Tout);
-        return GetMappingType().MakeGenericType(inputType, outputType);
+        return CreateMappingType().MakeGenericType(inputType, outputType);
     }
 
-    internal static Type GetMappingType(Type from, Type to)
+    internal static Type CreateMappingType(Type from, Type to)
     {
-        return GetMappingType().MakeGenericType(from, to);
+        return CreateMappingType().MakeGenericType(from, to);
     }
 
     internal static string ERR_NO_MAPPER(Type mapperType)

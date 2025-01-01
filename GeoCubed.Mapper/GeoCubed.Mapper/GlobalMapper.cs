@@ -19,7 +19,7 @@ public class GlobalMapper
         this._provider = provider;
 
         // Get the name of the map method.
-        var type = MappingHelper.GetMappingType();
+        var type = MappingHelper.CreateMappingType();
         this._mappingMethodName = type.GetMethods()[0].Name;
     }
 
@@ -34,7 +34,7 @@ public class GlobalMapper
         where From : class
         where To : class
     {
-        var mappingType = MappingHelper.GetMappingType<From, To>();
+        var mappingType = MappingHelper.CreateMappingType<From, To>();
         return this.CreateAndRunMapping<To>(mappingType, obj);
     }
 
@@ -47,7 +47,7 @@ public class GlobalMapper
     public To Map<To>(object obj)
         where To : class
     {
-        var mapperType = MappingHelper.GetMappingType(obj.GetType(), typeof(To));
+        var mapperType = MappingHelper.CreateMappingType(obj.GetType(), typeof(To));
         return this.CreateAndRunMapping<To>(mapperType, obj);
     }
 
