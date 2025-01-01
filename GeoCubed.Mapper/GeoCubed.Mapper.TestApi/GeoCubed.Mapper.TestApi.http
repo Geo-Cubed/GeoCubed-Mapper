@@ -1,0 +1,6 @@
+@GeoCubed.Mapper.TestApi_HostAddress = http://localhost:5009
+
+GET {{GeoCubed.Mapper.TestApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
