@@ -58,7 +58,7 @@ public class GlobalMapper
         if (instance == null)
         {
             var exception = MappingExceptionBuilder
-                .AMappingException()
+                .AnException()
                 .WithMessage(MappingHelper.ERR_NO_MAPPER(mapperType))
                 .WithFromType(obj.GetType())
                 .WithToType(typeof(To))
@@ -72,7 +72,7 @@ public class GlobalMapper
         if (method == null)
         {
             var exception = MappingExceptionBuilder
-                .AMappingException()
+                .AnException()
                 .WithMessage(MappingHelper.ERR_NO_MAP_METHOD(mapperType, this._mappingMethodName))
                 .WithFromType(obj.GetType())
                 .WithToType(typeof(To))
@@ -90,7 +90,7 @@ public class GlobalMapper
         catch(Exception ex)
         {
             var exception = MappingExceptionBuilder
-                .AMappingException()
+                .AnException()
                 .WithMessage(MappingHelper.ERR_ON_MAP(mapperType, this._mappingMethodName))
                 .WithFromType(obj.GetType())
                 .WithToType(typeof(To))

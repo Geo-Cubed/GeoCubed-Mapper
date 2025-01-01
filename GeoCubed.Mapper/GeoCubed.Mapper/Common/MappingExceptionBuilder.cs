@@ -12,7 +12,7 @@ internal class MappingExceptionBuilder
         this._message = string.Empty;
     }
 
-    internal static MappingExceptionBuilder AMappingException()
+    internal static MappingExceptionBuilder AnException()
     {
         return new MappingExceptionBuilder();
     }
@@ -44,7 +44,7 @@ internal class MappingExceptionBuilder
     internal MappingException Build()
     {
         MappingException ex;
-        if (string.IsNullOrEmpty(this._message))
+        if (string.IsNullOrEmpty(this._message) && this._innerException == null)
         {
             ex = new MappingException();
         }
