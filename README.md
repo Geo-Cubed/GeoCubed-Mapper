@@ -52,7 +52,9 @@ or
 services.AddMapper(Assembly.GetExecutingAssembly());
 ```
 
-Note: all assemblies where mappers are held will need registering so if you have mapper1 in assembly1 and mapper2 in assembly2 you will need to do the following
+Note:
+The assembly does not have to be specified but it will default to `Assembly.GetCallingAssembly()`
+All assemblies where mappers are held will need registering so if you have mapper1 in assembly1 and mapper2 in assembly2 you will need to do the following
 
 ```csharp
 services.AddMapper(Assembly1);
