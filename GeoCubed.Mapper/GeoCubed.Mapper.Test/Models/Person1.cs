@@ -1,6 +1,6 @@
 namespace GeoCubed.Mapper.Test.Models;
 
-public class DbPerson
+public class Person1
 {
     public long Id { get; set; }
 

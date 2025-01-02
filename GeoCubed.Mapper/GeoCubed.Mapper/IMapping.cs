@@ -1,3 +1,5 @@
+namespace GeoCubed.Mapper;
+
 /// <summary>
 /// Mapping interface to be using to specify a mapping between two classes.
 /// </summary>

@@ -1,6 +1,6 @@
 namespace GeoCubed.Mapper.Test.Models;
 
-public class RegPerson
+public class Person2
 {
     public string FullName { get; set; }
 

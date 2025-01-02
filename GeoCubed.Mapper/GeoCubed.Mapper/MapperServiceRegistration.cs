@@ -34,10 +34,11 @@ public static class MapperServiceRegistration
             {
                 var mapper = assemblyTypes[i];
 
+                // Checks if the type implements the mapping type and trys to add it to the service container.
                 var genericType = mapper.GetInterface(MappingHelper.CreateMappingType().Name);
                 if (genericType != null)
                 {
-                    services.AddScoped(genericType, mapper);
+                    services.TryAddScoped(genericType, mapper);
                 }
             }
         }

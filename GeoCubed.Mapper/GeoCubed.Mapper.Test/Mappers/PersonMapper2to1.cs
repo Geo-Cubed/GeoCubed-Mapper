@@ -1,12 +1,12 @@
 ﻿using GeoCubed.Mapper.Test.Models;
 namespace GeoCubed.Mapper.Test.Mappers;
 
-public class ReversePersonMapper : IMapping<RegPerson, DbPerson>
+public class PersonMapper2to1 : IMapping<Person2, Person1>
 {
-    public DbPerson Map(RegPerson obj)
+    public Person1 Map(Person2 obj)
     {
         var nameSplit = obj.FullName.Split(" ");
-        return new DbPerson()
+        return new Person1()
         {
             FirstName = nameSplit[0],
             LastName = nameSplit[1],

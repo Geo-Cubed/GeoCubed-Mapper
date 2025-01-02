@@ -2,9 +2,9 @@
 
 namespace GeoCubed.Mapper.Test.Mappers;
 
-public class ThirdPersonMapper : IMapping<RegPerson, ThirdPerson>
+public class PersonMapper2to3 : IMapping<Person2, Person3>
 {
-    public ThirdPerson Map(RegPerson obj)
+    public Person3 Map(Person2 obj)
     {
         throw new NotImplementedException();
     }
