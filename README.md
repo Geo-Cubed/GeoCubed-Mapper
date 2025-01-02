@@ -42,7 +42,7 @@ Note:
 - The mappers support dependancy injection
 
 ##### 3. Add the mappers to the service collection
-This will normally be done in startup.cs or program.cs
+This will normally be done in Startup.cs or Program.cs
 
 ```csharp
 GeoCubed.Mapper.MapperServiceRegistration.AddMapper(serivces, Assembly.GetExecutingAssembly());
