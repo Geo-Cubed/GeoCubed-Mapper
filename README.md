@@ -99,8 +99,8 @@ Another option is to use the global mapper, this exposes a generic map method wh
 ##### 1. Inject the global mapper
 ##### 2. Call the map method
 There are then two ways to call the mapping:
-    - Specifying both the To and From types
-    - Just using the type you want the object to map to.
+- Specifying both the To and From types
+- Just using the type you want the object to map to.
 
 ```csharp
 public class ExampleClass
@@ -141,3 +141,11 @@ public class ExampleClass
     // * END STEP 2 *
 }
 ```
+
+## Test Project
+
+Located at `GeoCubed.Mapper/GeoCubed.Mapper.Test` there is a xUnit test projct file `GeoCubed.Mapper.Test.csproj`
+
+This project just contains unit tests used to validate the functionality of the mappers
+
+This project can be ignored as it doesn't have purpose other than validating the mappers work as expected
