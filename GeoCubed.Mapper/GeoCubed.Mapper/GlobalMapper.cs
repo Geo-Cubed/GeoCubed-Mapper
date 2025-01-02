@@ -5,7 +5,7 @@ namespace GeoCubed.Mapper;
 /// <summary>
 /// Global mapper class capable of retrieving and calling mappers.
 /// </summary>
-public class GlobalMapper
+public sealed class GlobalMapper
 {
     private readonly IServiceProvider _provider;
     private readonly string _mappingMethodName;

@@ -3,7 +3,7 @@
 /// <summary>
 /// Mapping exception for throwing mapping related errors.
 /// </summary>
-public class MappingException : Exception
+public sealed class MappingException : Exception
 {
     /// <summary>
     /// Gets or sets the sourceType of the mapping.
