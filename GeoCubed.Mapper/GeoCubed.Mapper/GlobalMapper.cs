@@ -16,6 +16,8 @@ public sealed class GlobalMapper
     /// <param name="provider">The service provider.</param>
     public GlobalMapper(IServiceProvider provider)
     {
+        ArgumentNullException.ThrowIfNull(provider);
+
         this._provider = provider;
 
         // Get the name of the map method.
